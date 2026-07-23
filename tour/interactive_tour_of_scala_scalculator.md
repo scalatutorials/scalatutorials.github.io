@@ -18,5 +18,5 @@ Play with the editor on the left, type things like
 or `20 / (3 + 7)`
 
 <div class="callout">
-<strong>Tip:</strong> to execute the code, click the <strong>Run</strong> button in the editor, or press <kbd>Ctrl</kbd>+<kbd>Enter</kbd>.
+<strong>Tip:</strong> to execute the code, click the <strong>Run</strong> button in the editor.
 </div>

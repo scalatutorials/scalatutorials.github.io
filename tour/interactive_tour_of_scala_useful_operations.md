@@ -50,6 +50,6 @@ code: |
 Scala has a lot of "syntactic sugar" for many common operations.
 Some useful ones are shown on the left.
 
-Play with the examples (to run, click the <strong>Run</strong> button in the editor, or press <kbd>Ctrl</kbd>+<kbd>Enter</kbd>) and once you feel comfortable continue to the next step.
+Play with the examples (to run, click the <strong>Run</strong> button in the editor) and once you feel comfortable continue to the next step.
 
 More will be explained later on.

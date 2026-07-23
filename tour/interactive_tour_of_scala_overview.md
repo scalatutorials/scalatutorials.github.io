@@ -126,7 +126,7 @@ On the left is a summary of Scala's language features that will be covered.
 ### Executable examples
 
 <div class="callout">
-<strong>Tip:</strong> to execute the code, click the <strong>Run</strong> button in the editor, or press <kbd>Ctrl</kbd>+<kbd>Enter</kbd>.
+<strong>Tip:</strong> to execute the code, click the <strong>Run</strong> button in the editor.
 </div>
 
 ### Some fun facts

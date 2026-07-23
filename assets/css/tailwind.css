@@ -32,6 +32,17 @@
   }
 }
 
+/* Inline code: drop the typography plugin's literal backtick decorations
+   and render Bootstrap-style chips (pink/red on a soft background). */
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none !important;
+}
+.prose :not(pre) > code {
+  @apply rounded-md bg-red-50 px-1.5 py-0.5 font-medium text-red-700 dark:bg-red-950/50 dark:text-red-300;
+  font-size: 0.9em;
+}
+
 /* Make the Scastie embed fill the editor pane (its own CSS sets a fixed
    800px width and a capped height). */
 #editor-pane .scastie.embedded,
