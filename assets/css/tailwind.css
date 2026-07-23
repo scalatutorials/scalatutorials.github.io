@@ -49,16 +49,16 @@
    photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
    while you interact with the editor inside it. */
 .laptop-stage {
-  perspective: 2000px;
-  perspective-origin: 45% 35%;
+  perspective: 2200px;
+  perspective-origin: 50% 35%;
 }
 .laptop {
   max-width: 40rem;
   width: 100%;
-  transform: rotateY(-3deg) rotateX(2deg) rotateZ(-4deg);
+  transform: rotateX(6deg) rotateY(10deg);
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: drop-shadow(-14px 24px 26px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(18px 26px 26px rgba(0, 0, 0, 0.5));
 }
 .laptop:hover,
 .laptop:focus-within {
@@ -67,7 +67,7 @@
 /* silver MacBook Air style bezel */
 .laptop-screen {
   position: relative;
-  padding: 16px 14px 0;
+  padding: 16px 14px 20px;
   border-radius: 1.1rem 1.1rem 0 0;
   background: linear-gradient(150deg, #f4f4f6, #d3d3d9 55%, #b0b0b8);
   box-shadow:
@@ -78,7 +78,7 @@
 .laptop-screen::after {
   content: "";
   position: absolute;
-  inset: 16px 14px 0;
+  inset: 16px 14px 20px;
   pointer-events: none;
   border-radius: 2px;
   background: linear-gradient(112deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 28%, transparent 42%);
@@ -92,14 +92,6 @@
   margin-left: -3px;
   border-radius: 9999px;
   background: radial-gradient(circle at 35% 35%, #52525b, #18181b 70%);
-}
-.laptop-chin {
-  padding: 4px 0 6px;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: #71717a;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .laptop-display {
   aspect-ratio: 16 / 10;
