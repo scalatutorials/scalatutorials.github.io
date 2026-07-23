@@ -45,6 +45,28 @@
   height: 100%;
 }
 
+/* Inside the homepage laptop, recolor Scastie's Solarized-teal chrome to
+   match the laptop display so the embed blends into the screen.
+   !important because Scastie injects its stylesheet after ours. */
+.laptop-display .scastie .main-panel,
+.laptop-display .scastie .cm-gutters {
+  background: #1c1e1a !important;
+}
+.laptop-display .scastie .cm-gutters {
+  border-right: 1px solid #2e312b !important;
+}
+.laptop-display .scastie .console {
+  background: #141612 !important;
+}
+.laptop-display .scastie nav.editor-mobile,
+.laptop-display .scastie .editor-wrapper,
+.laptop-display .scastie .switcher-hide,
+.laptop-display .scastie .switcher-show,
+.laptop-display .scastie .handler,
+.laptop-display .scastie li.logo {
+  background: #1c1e1a !important;
+}
+
 /* Vector MacBook for the homepage hero (spiritual successor of the old
    photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
    while you interact with the editor inside it. */
