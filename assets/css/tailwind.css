@@ -49,49 +49,57 @@
    photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
    while you interact with the editor inside it. */
 .laptop-stage {
-  perspective: 1800px;
-  perspective-origin: 35% 40%;
+  perspective: 2000px;
+  perspective-origin: 45% 35%;
 }
 .laptop {
   max-width: 40rem;
   width: 100%;
-  transform: rotateY(16deg) rotateX(6deg) rotateZ(-1deg);
+  transform: rotateY(-3deg) rotateX(2deg) rotateZ(-4deg);
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: drop-shadow(24px 30px 28px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(-14px 24px 26px rgba(0, 0, 0, 0.5));
 }
 .laptop:hover,
 .laptop:focus-within {
   transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
 }
+/* silver MacBook Air style bezel */
 .laptop-screen {
   position: relative;
-  border: 11px solid #101012;
-  border-bottom-width: 24px;
+  padding: 16px 14px 0;
   border-radius: 1.1rem 1.1rem 0 0;
-  background: linear-gradient(160deg, #232326, #101012 55%);
+  background: linear-gradient(150deg, #f4f4f6, #d3d3d9 55%, #b0b0b8);
   box-shadow:
-    inset 0 0 0 1.5px #3f3f46,
-    inset 0 0 14px rgba(0, 0, 0, 0.9);
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.8),
+    inset 0 0 0 1px #8e8e96;
 }
 /* subtle glass reflection sweeping across the display */
 .laptop-screen::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 16px 14px 0;
   pointer-events: none;
   border-radius: 2px;
-  background: linear-gradient(112deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 28%, transparent 42%);
+  background: linear-gradient(112deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 28%, transparent 42%);
 }
 .laptop-camera {
   position: absolute;
-  top: -8px;
+  top: 5px;
   left: 50%;
   width: 6px;
   height: 6px;
   margin-left: -3px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 35% 35%, #71717a, #27272a 70%);
+  background: radial-gradient(circle at 35% 35%, #52525b, #18181b 70%);
+}
+.laptop-chin {
+  padding: 4px 0 6px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .laptop-display {
   aspect-ratio: 16 / 10;
