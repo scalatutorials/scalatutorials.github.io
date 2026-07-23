@@ -7,7 +7,7 @@ links:
 - text: Top-level definitions
   url: https://docs.scala-lang.org/scala3/book/taste-toplevel-definitions.html
 code: |
-  //In Scala 3, definitions can live directly at the top of a file —
+  //In Scala 3, definitions can live directly at the top of a file;
   //no wrapper object needed.
 
   val language = "Scala 3"
@@ -50,11 +50,11 @@ Scala 3 removes both layers of ceremony:
   for _ <- 1 to times do println(s"Hello, $name!")
 ```
 
-Running `scala run . -- Alice 3` prints the greeting three times — no `Array[String]`
+Running `scala run . -- Alice 3` prints the greeting three times; no `Array[String]`
 in sight.
 
 <div class="callout">
-<strong>Note:</strong> the editor here runs in <em>worksheet</em> mode — your code is
+<strong>Note:</strong> the editor here runs in <em>worksheet</em> mode: your code is
 already inside a script, so <code>@main</code> is shown in a comment (a worksheet has
 no place for a program entry point; a plain <code>.scala</code> file does).
 </div>

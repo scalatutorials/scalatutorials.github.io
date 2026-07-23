@@ -5,7 +5,7 @@ tagline: Interactive, bite-sized lessons that run in your browser
 permalink: /tour/
 ---
 
-Each lesson pairs a short explanation with a live code editor — read on one side,
+Each lesson pairs a short explanation with a live code editor: read on one side,
 run and tweak real Scala on the other. Nothing to install: the code runs on
 [Scastie](https://scastie.scala-lang.org), the Scala Center's online playground.
 

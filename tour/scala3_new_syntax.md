@@ -23,7 +23,7 @@ code: |
   for fruit <- List("apple", "banana", "cherry") do
     println(fruit)
 
-  //indentation instead of braces — like Python, but typed
+  //indentation instead of braces: like Python, but typed
   def greet(name: String): String =
     val upper = name.capitalize
     s"Hello, $upper!"
@@ -39,7 +39,7 @@ code: |
 
   println(classify(-5))
 
-  //the old style still compiles — both are valid Scala 3
+  //the old style still compiles; both are valid Scala 3
   def greetOldStyle(name: String): String = {
     val upper = name.capitalize
     s"Hello, $upper!"
@@ -48,12 +48,12 @@ code: |
 ---
 
 Scala 3's most visible change: **braces are optional**. Indentation defines structure,
-the way it does in Python — except everything is still statically typed and checked
+the way it does in Python, except everything is still statically typed and checked
 by the compiler.
 
 Alongside it came a new **control syntax**:
 
-- `if cond then a else b` — no parentheses around the condition
+- `if cond then a else b`: no parentheses around the condition
 - `while cond do body`
 - `for x <- xs do body` (and `for x <- xs yield expr` for comprehensions)
 
@@ -64,6 +64,6 @@ For long indented blocks, an optional `end` marker (`end classify`, `end if`,
 `end while`) documents where a block finishes.
 
 <div class="callout">
-<strong>Tip:</strong> try removing an indentation level in the editor and running —
+<strong>Tip:</strong> try removing an indentation level in the editor and running:
 the compiler will tell you exactly what it expected.
 </div>

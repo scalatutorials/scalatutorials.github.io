@@ -14,7 +14,7 @@ code: |
   def renderList(items: List[String])(using cfg: Config): String =
     items.map(item => " " * cfg.indent + cfg.bullet + " " + item).mkString("\n")
 
-  //no need to pass the config — the given is found automatically
+  //no need to pass the config; the given is found automatically
   println(renderList(List("read", "run", "tweak")))
 
   //you can still pass one explicitly when you want to override
@@ -39,16 +39,16 @@ code: |
   println(describe(true))
 ---
 
-Scala 2's `implicit` keyword did too many unrelated jobs — implicit parameters,
-implicit conversions, implicit classes — and earned a reputation for being confusing.
+Scala 2's `implicit` keyword did too many unrelated jobs (implicit parameters,
+implicit conversions, implicit classes) and earned a reputation for being confusing.
 Scala 3 split it into purpose-built keywords:
 
-- **`given`** declares a value the compiler may supply automatically — a canonical
+- **`given`** declares a value the compiler may supply automatically: a canonical
   instance for a type.
 - **`using`** marks a parameter list the compiler fills in from the givens in scope.
 - **`summon[T]`** retrieves the current given of type `T` (Scala 2's `implicitly`).
 
-The mechanics are what Scala always had — term inference — but the intent is now
+The mechanics are what Scala always had (term inference), but the intent is now
 explicit at both ends: the *definition* says "this is available for injection", and
 the *call site's signature* says "this gets injected".
 
@@ -57,5 +57,5 @@ A trait like `Show[T]` describes a capability; `given` instances implement it pe
 any function can then demand the capability with `using`. This is how Scala libraries
 do JSON encoding, ordering, equality, and much more.
 
-(Implicit *conversions* — the most abused implicit feature — still exist but are now
+(Implicit *conversions*, the most abused implicit feature, still exist but are now
 deliberately harder to define, requiring an explicit `Conversion` given.)

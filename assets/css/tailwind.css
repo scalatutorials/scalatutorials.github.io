@@ -46,18 +46,42 @@
 }
 
 /* Vector MacBook for the homepage hero (spiritual successor of the old
-   photo of a MacBook running ScalaKata). */
+   photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
+   while you interact with the editor inside it. */
+.laptop-stage {
+  perspective: 1800px;
+  perspective-origin: 35% 40%;
+}
 .laptop {
   max-width: 40rem;
   width: 100%;
+  transform: rotateY(16deg) rotateX(6deg) rotateZ(-1deg);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(24px 30px 28px rgba(0, 0, 0, 0.55));
+}
+.laptop:hover,
+.laptop:focus-within {
+  transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
 }
 .laptop-screen {
   position: relative;
-  border: 12px solid #18181b;
-  border-bottom-width: 22px;
-  border-radius: 1rem 1rem 0 0;
-  background: #18181b;
-  box-shadow: inset 0 0 2px 2px #3f3f46;
+  border: 11px solid #101012;
+  border-bottom-width: 24px;
+  border-radius: 1.1rem 1.1rem 0 0;
+  background: linear-gradient(160deg, #232326, #101012 55%);
+  box-shadow:
+    inset 0 0 0 1.5px #3f3f46,
+    inset 0 0 14px rgba(0, 0, 0, 0.9);
+}
+/* subtle glass reflection sweeping across the display */
+.laptop-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 2px;
+  background: linear-gradient(112deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 28%, transparent 42%);
 }
 .laptop-camera {
   position: absolute;
@@ -67,7 +91,7 @@
   height: 6px;
   margin-left: -3px;
   border-radius: 9999px;
-  background: #52525b;
+  background: radial-gradient(circle at 35% 35%, #71717a, #27272a 70%);
 }
 .laptop-display {
   aspect-ratio: 16 / 10;
@@ -76,20 +100,24 @@
   background: #1c1e1a;
 }
 .laptop-base {
-  height: 14px;
-  margin: 0 -2.5rem;
-  border-radius: 0 0 0.9rem 0.9rem;
-  background: linear-gradient(#e4e4e7, #a1a1aa 70%, #71717a);
+  height: 16px;
+  margin: 0 -2.75rem;
+  border-radius: 2px 2px 0.9rem 0.9rem;
+  background: linear-gradient(#f4f4f5, #c4c4cc 30%, #8e8e96 78%, #5b5b63);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 14px 18px -10px rgba(0, 0, 0, 0.6);
 }
 .laptop-notch {
-  width: 5.5rem;
-  height: 6px;
+  width: 6.5rem;
+  height: 7px;
   margin: 0 auto;
-  border-radius: 0 0 0.5rem 0.5rem;
-  background: #a1a1aa;
+  border-radius: 0 0 0.6rem 0.6rem;
+  background: linear-gradient(#9c9ca4, #6f6f77);
 }
 @media (max-width: 480px) {
   .laptop-base { margin: 0 -1rem; }
+  .laptop { transform: none; filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.5)); }
 }
 
 /* Minimal Rouge (syntax highlighting) scheme, light + dark. */

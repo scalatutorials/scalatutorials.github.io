@@ -1,6 +1,6 @@
 # Scala Tutorials
 
-[scalatutorials.com](https://scalatutorials.com) — interactive, bite-sized Scala
+[scalatutorials.com](https://scalatutorials.com): interactive, bite-sized Scala
 tutorials that run in the browser. The tour pairs each lesson with a live editor
 powered by [Scastie](https://scastie.scala-lang.org), and targets **Scala 3**.
 
@@ -18,7 +18,7 @@ That's it. The script:
 3. starts Tailwind in watch mode and `jekyll serve --livereload` on
    [http://localhost:4000](http://localhost:4000).
 
-One-shot production build: `./dev.sh build`. If `assets/css/site.css` changed, commit it —
+One-shot production build: `./dev.sh build`. If `assets/css/site.css` changed, commit it:
 GitHub Pages doesn't run Tailwind, so the built stylesheet lives in the repo.
 
 Prerequisite: Ruby with Bundler (rvm, rbenv, or Homebrew Ruby all work).
@@ -26,7 +26,7 @@ Prerequisite: Ruby with Bundler (rvm, rbenv, or Homebrew Ruby all work).
 ## How it's put together
 
 - Plain Jekyll (built automatically by GitHub Pages from `master`), no theme framework.
-- `_data/tour.yml` is the single source of truth for tour ordering — the Contents
+- `_data/tour.yml` is the single source of truth for tour ordering: the Contents
   dialog, `/tour/` page, and prev/next links all derive from it. To add a lesson,
   drop a markdown file in `tour/` (front matter: `layout: tour`, `title`, `code`,
   optional `links`) and add one line to `_data/tour.yml`.

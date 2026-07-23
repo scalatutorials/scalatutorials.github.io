@@ -25,7 +25,7 @@ code: |
   import scala.beans.*
   class SPerson(@BeanProperty var name:String)
   //Note: @BeanProperty is optional
-  //(only if you need Java code to call getName()/setName —
+  //(only if you need Java code to call getName()/setName:
   // the generated bean methods are for Java interop; from
   // Scala you use the uniform accessors below)
 
@@ -51,5 +51,5 @@ code: |
 
 - Scala's automatic getters and setters follow the uniform access principle, so the getter and setter name is the same as the field it encapsulates
 - However if you need to have Java client code accessing your Scala class, it's as easy as adding a `@BeanProperty` annotation to instruct the compiler to automatically add a Java bean style getter and setter.
-- Note that in Scala 3 the generated `getName()`/`setName(...)` exist for *Java* callers — Scala code keeps using the uniform accessors (`sp.name`)
+- Note that in Scala 3 the generated `getName()`/`setName(...)` exist for *Java* callers; Scala code keeps using the uniform accessors (`sp.name`)
 - For boolean properties of style `isFlag` use `@BooleanBeanProperty` instead

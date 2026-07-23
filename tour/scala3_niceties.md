@@ -47,15 +47,15 @@ code: |
 
 A round-up of smaller Scala 3 improvements you'll bump into:
 
-- **Creator applications** — `Greeter("world")` works without `new` for *every* class,
+- **Creator applications**: `Greeter("world")` works without `new` for *every* class,
   not just case classes. (The main reason many classes were made `case` in Scala 2
   disappears.)
-- **Trait parameters** — traits can declare constructor parameters, removing an old
+- **Trait parameters**: traits can declare constructor parameters, removing an old
   asymmetry with classes (and many `def`-override workarounds).
-- **`export`** — the composition counterpart of `import`: forward selected members of
+- **`export`**: the composition counterpart of `import`; forward selected members of
   an inner object as your own. Favoring composition over inheritance gets real language
   support.
-- **Opaque types** — a wrapper type that exists only at compile time: inside the
+- **Opaque types**: a wrapper type that exists only at compile time. Inside the
   defining scope `Meters` *is* a `Double`; outside it's a distinct type with only the
   interface you export. Type safety with zero runtime cost.
 
@@ -63,4 +63,4 @@ Honorable mentions you can explore from the link below: `inline` for guaranteed
 compile-time evaluation, match types, dependent function types, and `derives` for
 automatic type-class derivation.
 
-This concludes the Scala 3 section — and the tour. Happy Scala!
+This concludes the Scala 3 section, and with it the tour. Happy Scala!

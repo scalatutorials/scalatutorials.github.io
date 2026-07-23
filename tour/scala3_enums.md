@@ -5,7 +5,7 @@ links:
 - text: Enums (official docs)
   url: https://docs.scala-lang.org/scala3/book/types-adts-gadts.html
 code: |
-  //simple enums — at last, first-class in the language
+  //simple enums: at last, first-class in the language
   enum Color:
     case Red, Green, Blue
 
@@ -37,8 +37,8 @@ code: |
 ---
 
 Scala 2 had no `enum` keyword. You chose between `scala.Enumeration` (limited and
-widely avoided) or hand-writing a `sealed trait` with `case object`s — powerful,
-but boilerplate-heavy.
+widely avoided) or hand-writing a `sealed trait` with `case object`s (powerful,
+but boilerplate-heavy).
 
 Scala 3 gives enums a first-class syntax that scales from the trivial:
 
@@ -49,9 +49,9 @@ enum Color:
 
 …up to full **algebraic data types** (ADTs), where each case carries its own data.
 Because an enum is *sealed* (no cases can be added elsewhere), the compiler warns you
-if a `match` forgets a case — try deleting the `Rectangle` case in `area` and running.
+if a `match` forgets a case. Try deleting the `Rectangle` case in `area` and running.
 
-You still get everything the old sealed-trait encoding provided — pattern matching,
-exhaustiveness checking, companion methods — plus conveniences like `values`,
+You still get everything the old sealed-trait encoding provided (pattern matching,
+exhaustiveness checking, companion methods) plus conveniences like `values`,
 `ordinal`, and `valueOf` for simple enums. Enums also interoperate with Java's
 `enum` when you extend `java.lang.Enum`.

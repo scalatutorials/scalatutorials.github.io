@@ -29,7 +29,7 @@ code: |
   println(List(1, 2, 3, 4).second)       //> 2
   println(List(1, 2, 3, 4).penultimate)  //> 3
 
-  //the Scala 2 way, for comparison — still works, but wordier:
+  //the Scala 2 way, for comparison (still works, but wordier):
   implicit class RichIntOld(private val i: Int) {
     def cubed = i * i * i
   }
@@ -37,7 +37,7 @@ code: |
 ---
 
 Remember "pimp my library" from the basic tour? In Scala 2, adding methods to an
-existing type meant wrapping it in an `implicit class` — a clever encoding, but you
+existing type meant wrapping it in an `implicit class`: a clever encoding, but you
 were really defining a wrapper class just to get one method.
 
 Scala 3 says what it means: **`extension`**.
@@ -55,6 +55,6 @@ Extensions can:
 - take extra parameters, type bounds, and `using` clauses (they combine naturally
   with the contextual abstractions on the next page).
 
-The old `implicit class` still compiles, so existing libraries keep working — but new
+The old `implicit class` still compiles, so existing libraries keep working, but new
 Scala 3 code uses `extension`, and the standard library's own enrichments are moving
 that way too.

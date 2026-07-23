@@ -21,5 +21,5 @@ var x: Int = 1 + 2
 ```
 
 <div class="callout">
-<strong>Tip:</strong> Adding an explicit type is a matter of preference: on one hand it helps "document" your code, on the other hand it might make it more "cluttered". Use judgment — e.g. add explicit types to public interfaces and APIs, and skip them for internal implementation.
+<strong>Tip:</strong> Adding an explicit type is a matter of preference: on one hand it helps "document" your code, on the other hand it might make it more "cluttered". Use judgment: e.g. add explicit types to public interfaces and APIs, and skip them for internal implementation.
 </div>
