@@ -45,6 +45,44 @@
   height: 100%;
 }
 
+/* On tour pages, blend Scastie's chrome into the site's zinc palette
+   (light and dark). !important because Scastie injects its stylesheet
+   after ours. */
+#editor-pane .scastie .main-panel,
+#editor-pane .scastie .cm-gutters,
+#editor-pane .scastie .editor-wrapper,
+#editor-pane .scastie nav.editor-mobile,
+#editor-pane .scastie .switcher-hide,
+#editor-pane .scastie .switcher-show,
+#editor-pane .scastie .handler,
+#editor-pane .scastie li.logo {
+  background: #fafafa !important;
+}
+#editor-pane .scastie .console {
+  background: #f4f4f5 !important;
+}
+#editor-pane .scastie .cm-gutters {
+  border-right: 1px solid #e4e4e7 !important;
+}
+@media (prefers-color-scheme: dark) {
+  #editor-pane .scastie .main-panel,
+  #editor-pane .scastie .cm-gutters,
+  #editor-pane .scastie .editor-wrapper,
+  #editor-pane .scastie nav.editor-mobile,
+  #editor-pane .scastie .switcher-hide,
+  #editor-pane .scastie .switcher-show,
+  #editor-pane .scastie .handler,
+  #editor-pane .scastie li.logo {
+    background: #18181b !important;
+  }
+  #editor-pane .scastie .console {
+    background: #0f0f11 !important;
+  }
+  #editor-pane .scastie .cm-gutters {
+    border-right: 1px solid #27272a !important;
+  }
+}
+
 /* Inside the homepage laptop, recolor Scastie's Solarized-teal chrome to
    match the laptop display so the embed blends into the screen.
    !important because Scastie injects its stylesheet after ours. */
