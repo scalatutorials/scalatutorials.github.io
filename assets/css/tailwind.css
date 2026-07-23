@@ -32,10 +32,12 @@
   }
 }
 
-/* Make the Scastie embed fill the editor pane. */
+/* Make the Scastie embed fill the editor pane (its own CSS sets a fixed
+   800px width and a capped height). */
 #editor-pane .scastie.embedded {
   height: 100%;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
 }
 #editor-pane .scastie.embedded .content {
   height: 100%;

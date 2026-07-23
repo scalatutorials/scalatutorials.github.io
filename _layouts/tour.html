@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 {% include head.html %}
-<body class="h-full bg-white text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
+<body class="min-h-full bg-white text-zinc-800 antialiased lg:h-full dark:bg-zinc-950 dark:text-zinc-200">
 {% assign this_file = page.name | remove: ".md" %}
 {% assign pages = site.data.tour %}
 {% assign total = pages | size %}
@@ -10,11 +10,11 @@
 {% assign next_idx = idx | plus: 1 %}
 {% if idx > 0 %}{% assign prev = pages[prev_idx] %}{% endif %}
 {% if next_idx < total %}{% assign next = pages[next_idx] %}{% endif %}
-<div class="flex h-full flex-col">
+<div class="flex min-h-full flex-col lg:h-full">
   {% include header.html %}
-  <div class="grid min-h-0 flex-1 lg:grid-cols-2">
+  <div class="grid grid-cols-1 flex-1 lg:min-h-0 lg:grid-cols-2">
 
-    <section class="min-h-0 overflow-y-auto px-4 py-6 sm:px-6 lg:px-8">
+    <section class="px-4 py-6 sm:px-6 lg:min-h-0 lg:overflow-y-auto lg:px-8">
       <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ cur.topic }} · {{ idx | plus: 1 }} of {{ total }}</p>
       <h1 class="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ page.title }}</h1>
       {% if page.lead %}
@@ -51,7 +51,7 @@
       </nav>
     </section>
 
-    <section class="min-h-[55vh] border-t border-zinc-200 lg:min-h-0 lg:border-l lg:border-t-0 dark:border-zinc-800">
+    <section class="min-h-[80vh] border-t border-zinc-200 lg:min-h-0 lg:border-l lg:border-t-0 dark:border-zinc-800">
       <div id="editor-pane" class="h-full">
         <pre id="tour-code" class="h-full overflow-auto whitespace-pre bg-zinc-50 p-4 font-mono text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">{{ page.code | strip | xml_escape }}</pre>
       </div>
