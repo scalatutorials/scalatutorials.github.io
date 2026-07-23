@@ -73,13 +73,7 @@
 .laptop {
   max-width: 40rem;
   width: 100%;
-  transform: rotate(2.5deg);
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: drop-shadow(10px 18px 22px rgba(0, 0, 0, 0.45));
-}
-.laptop:hover,
-.laptop:focus-within {
-  transform: rotate(0deg);
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.45));
 }
 /* silver MacBook Air style bezel */
 .laptop-screen {
@@ -134,7 +128,6 @@
 }
 @media (max-width: 480px) {
   .laptop-base { margin: 0 -1rem; }
-  .laptop { transform: none; filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.5)); }
 }
 
 /* Minimal Rouge (syntax highlighting) scheme, light + dark. */
