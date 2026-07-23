@@ -1,7 +1,0 @@
-{% if site.JB.sharing.provider and page.sharing != false %}
-{% case site.JB.sharing.provider %}
-{% when "custom" %}
-  {% include custom/sharing %}
-{% endcase %}
-
-{% endif %}

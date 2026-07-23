@@ -1,28 +1,20 @@
 ---
 layout: tour
 title: "String interpolation"
-description: "Scala language tour"
-pageNumber: 6
-isLast: false
-group: tour
-nextPage: interactive_tour_of_scala_string_formatting.html
-prevPage: interactive_tour_of_scala_printing_values.html
 links:
 - text: String interpolation in Scala
-  url: http://docs.scala-lang.org/overviews/core/string-interpolation.html
+  url: https://docs.scala-lang.org/overviews/core/string-interpolation.html
 - text: What is this 'Tau' thing?
-  url: http://tauday.com
-code:
-  |
-  import scala.math._  
-  val Tau = Pi*2  
-  println(s"Happy $Tau Day")  
+  url: https://tauday.com
+code: |
+  import scala.math._
+  val Tau = Pi*2
+  println(s"Happy $Tau Day")
 ---
 
+Scala supports string interpolation (since Scala 2.10).
 
-From Scala 2.10, string interpolation is supported. 
-
-For complex expressions add curly braces, e.g. 
+For complex expressions add curly braces, e.g.
 
 ```scala
 s"Two times three: ${2 * 3}"

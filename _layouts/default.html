@@ -1,6 +1,11 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+{% include head.html %}
+<body class="flex min-h-full flex-col bg-white text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
+  {% include header.html %}
+  <main class="flex-1">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>

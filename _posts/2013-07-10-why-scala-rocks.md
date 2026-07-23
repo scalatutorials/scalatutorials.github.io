@@ -5,7 +5,6 @@ description: ""
 category: Code
 tags: [scala]
 ---
-{% include JB/setup %}
 
 <small>* a response to [Why Ruby Rocks](http://skofo.github.io/blog/why-ruby-rocks/)</small>
 

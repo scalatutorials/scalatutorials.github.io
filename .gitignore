@@ -1,14 +1,10 @@
-_site/*
-_theme_packages/*
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bin/
+Gemfile.lock
 
 Thumbs.db
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.rvmrc
-shortcuts
-run.bat
-start.bat
 npm-debug.log

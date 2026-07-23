@@ -1,5 +1,19 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.category %} · {{ page.category }}{% endif %}
+  </p>
+  <h1 class="mt-1 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ page.title }}</h1>
+  {% if page.tagline %}
+  <p class="mt-2 text-lg text-zinc-500 dark:text-zinc-400">{{ page.tagline | strip_html }}</p>
+  {% endif %}
+  <div class="prose prose-zinc mt-8 max-w-none dark:prose-invert">
+    {{ content }}
+  </div>
+  <p class="mt-10 border-t border-zinc-200 pt-4 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+    <a class="underline hover:text-zinc-700 dark:hover:text-zinc-200" href="/blog/">← All posts</a>
+  </p>
+</article>

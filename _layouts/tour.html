@@ -1,5 +1,90 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}{% include themes/twitter/tour.html %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+{% include head.html %}
+<body class="h-full bg-white text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
+{% assign this_file = page.name | remove: ".md" %}
+{% assign pages = site.data.tour %}
+{% assign total = pages | size %}
+{% for p in pages %}{% if p.file == this_file %}{% assign idx = forloop.index0 %}{% assign cur = p %}{% endif %}{% endfor %}
+{% assign prev_idx = idx | minus: 1 %}
+{% assign next_idx = idx | plus: 1 %}
+{% if idx > 0 %}{% assign prev = pages[prev_idx] %}{% endif %}
+{% if next_idx < total %}{% assign next = pages[next_idx] %}{% endif %}
+<div class="flex h-full flex-col">
+  {% include header.html %}
+  <div class="grid min-h-0 flex-1 lg:grid-cols-2">
+
+    <section class="min-h-0 overflow-y-auto px-4 py-6 sm:px-6 lg:px-8">
+      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ cur.topic }} · {{ idx | plus: 1 }} of {{ total }}</p>
+      <h1 class="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ page.title }}</h1>
+      {% if page.lead %}
+      <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-300">{{ page.lead }}</p>
+      {% endif %}
+      <div class="prose prose-zinc mt-6 max-w-none dark:prose-invert">
+        {{ content }}
+      </div>
+      {% assign has_links = page.links | size %}
+      {% if has_links > 0 %}
+      <div class="mt-8 border-t border-zinc-200 pt-4 dark:border-zinc-800">
+        <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">See also</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          {% for link in page.links %}
+          <li><a class="text-red-700 underline hover:text-red-800 dark:text-red-400 dark:hover:text-red-300" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.text }} ↗</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <nav class="mt-10 flex items-center justify-between gap-4 border-t border-zinc-200 pt-4 dark:border-zinc-800">
+        <div class="min-w-0">
+          {% if prev %}
+          <a class="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100" href="/tour/{{ prev.file }}.html">← {{ prev.title }}</a>
+          {% endif %}
+        </div>
+        <button id="toc-open" type="button" class="shrink-0 rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">Contents</button>
+        <div class="min-w-0 text-right">
+          {% if next %}
+          <a class="inline-block rounded-md bg-red-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-red-700" href="/tour/{{ next.file }}.html">{{ next.title }} →</a>
+          {% else %}
+          <a class="inline-block rounded-md bg-red-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-red-700" href="/tour/">Finish 🎉</a>
+          {% endif %}
+        </div>
+      </nav>
+    </section>
+
+    <section class="min-h-[55vh] border-t border-zinc-200 lg:min-h-0 lg:border-l lg:border-t-0 dark:border-zinc-800">
+      <div id="editor-pane" class="h-full">
+        <pre id="tour-code" class="h-full overflow-auto whitespace-pre bg-zinc-50 p-4 font-mono text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">{{ page.code | strip | xml_escape }}</pre>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<dialog id="toc-dialog" class="m-auto w-full max-w-lg rounded-lg border border-zinc-200 bg-white p-0 text-zinc-800 backdrop:bg-black/40 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
+  <div class="flex items-center justify-between border-b border-zinc-200 px-5 py-3 dark:border-zinc-700">
+    <h2 class="font-semibold text-zinc-900 dark:text-zinc-100">Contents</h2>
+    <button id="toc-close" type="button" class="rounded px-2 py-0.5 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-200" aria-label="Close">✕</button>
+  </div>
+  <div class="max-h-[60vh] overflow-y-auto px-5 py-4">
+    {% assign grouped = pages | group_by: "section" %}
+    {% for group in grouped %}
+    <h3 class="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500 first:mt-0 dark:text-zinc-400">{{ group.name }}</h3>
+    <ol class="mt-1 list-decimal space-y-0.5 pl-8 text-sm">
+      {% for p in group.items %}
+      <li>
+        {% if p.file == this_file %}
+        <span class="font-semibold text-zinc-900 dark:text-zinc-100">{{ p.title }}</span>
+        {% else %}
+        <a data-tour-link class="text-zinc-600 hover:text-zinc-900 hover:underline dark:text-zinc-400 dark:hover:text-zinc-100" href="/tour/{{ p.file }}.html">{{ p.title }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endfor %}
+  </div>
+</dialog>
+
+<script defer src="https://scastie.scala-lang.org/embedded.js"></script>
+<script defer src="/assets/js/tour.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../../_layouts/**/*.html";
+@source "../../_includes/**/*.html";
+@source "../../_posts/**/*.md";
+@source "../../tour/**/*";
+@source "../../*.html";
+@source "../../*.md";
+@source "../../blog/**/*";
+@source "../../assets/js/**/*.js";
+
+@layer components {
+  /* Info boxes inside tutorial markdown (replaces Bootstrap's .alert). */
+  .callout {
+    @apply my-4 rounded-md border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-900 dark:border-sky-900 dark:bg-sky-950 dark:text-sky-200;
+  }
+
+  /* Tick shown next to tour pages already visited (tracked in localStorage). */
+  .visited-page::after {
+    content: "✓";
+    @apply ml-1.5 font-semibold text-green-600 dark:text-green-500;
+  }
+}
+
+@layer base {
+  kbd {
+    @apply rounded border border-zinc-300 bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300;
+  }
+}
+
+/* Make the Scastie embed fill the editor pane. */
+#editor-pane .scastie.embedded {
+  height: 100%;
+  max-width: none;
+}
+#editor-pane .scastie.embedded .content {
+  height: 100%;
+}
+
+/* Minimal Rouge (syntax highlighting) scheme, light + dark. */
+.highlight .c, .highlight .c1, .highlight .cm { color: #6a737d; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kt { color: #d73a49; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb { color: #22863a; }
+.highlight .mi, .highlight .mf, .highlight .m { color: #005cc5; }
+.highlight .nc, .highlight .nn { color: #6f42c1; }
+.highlight .o { color: #d73a49; }
+@media (prefers-color-scheme: dark) {
+  .highlight .c, .highlight .c1, .highlight .cm { color: #8b949e; }
+  .highlight .k, .highlight .kd, .highlight .kt { color: #ff7b72; }
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb { color: #7ee787; }
+  .highlight .mi, .highlight .mf, .highlight .m { color: #79c0ff; }
+  .highlight .nc, .highlight .nn { color: #d2a8ff; }
+  .highlight .o { color: #ff7b72; }
+}

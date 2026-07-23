@@ -6,7 +6,6 @@ description: ""
 category: Beginner
 tags: [scala, sbt, giter8]
 ---
-{% include JB/setup %}
 
 Get started with a simple real world structure for a simple Scala project
 

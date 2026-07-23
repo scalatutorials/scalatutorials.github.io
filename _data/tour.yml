@@ -1,0 +1,45 @@
+# Single source of truth for tour ordering. The tour layout derives
+# prev/next links, page numbers, and the Contents dialog from this list;
+# /tour/index.md and /tour/toc.html render it as a table of contents.
+- { file: interactive_tour_of_scala_overview,                    title: "Overview",                        topic: "Welcome",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_scalculator,                 title: "Scalculator",                     topic: "Expressions", section: "Scala basics" }
+- { file: interactive_tour_of_scala_operators_are_methods,       title: "Operators are methods",           topic: "Types",       section: "Scala basics" }
+- { file: interactive_tour_of_scala_variables,                   title: "Variables",                       topic: "Variables",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_final_variables,             title: "Final variables",                 topic: "Variables",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_printing_values,             title: "Printing values",                 topic: "IO",          section: "Scala basics" }
+- { file: interactive_tour_of_scala_string_interpolation,        title: "String interpolation",            topic: "Strings",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_string_formatting,           title: "String formatting",               topic: "Strings",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_useful_operations,           title: "Useful operations",               topic: "Operations",  section: "Scala basics" }
+- { file: interactive_tour_of_scala_method_definition,           title: "Method definition",               topic: "Methods",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_method_definition_2,         title: "Method definition 2",             topic: "Methods",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_method_definition_3,         title: "Method definition 3",             topic: "Methods",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_anonymous_functions,         title: "Anonymous functions",             topic: "Functions",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_anonymous_functions_2,       title: "Anonymous functions 2",           topic: "Functions",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_return_multiple_variables,   title: "Return multiple values",          topic: "Variables",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_declare_multiple_variables,  title: "Declare multiple variables",      topic: "Variables",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_assign_multiple_variables,   title: "Assign multiple variables",       topic: "Variables",   section: "Scala basics" }
+- { file: interactive_tour_of_scala_loops_using_while,           title: "Loops using while",               topic: "Loops",       section: "Scala basics" }
+- { file: interactive_tour_of_scala_loops_using_for,             title: "Loops using for",                 topic: "Loops",       section: "Scala basics" }
+- { file: interactive_tour_of_scala_loops_without_loops,         title: "Loops without loops",             topic: "Loops",       section: "Scala basics" }
+- { file: interactive_tour_of_scala_if,                          title: "If",                              topic: "Conditions",  section: "Scala basics" }
+- { file: interactive_tour_of_scala_match_as_a_switch,           title: "Match as a switch",               topic: "Conditions",  section: "Scala basics" }
+- { file: interactive_tour_of_scala_arrays,                      title: "Arrays",                          topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_lists,                       title: "Lists",                           topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_sets,                        title: "Sets",                            topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_maps,                        title: "Maps",                            topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_mutable_collections,         title: "Mutable collections",             topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_collections__accessing_elements, title: "Collections: accessing elements", topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_collections__concatenation,  title: "Collections: concatenation",      topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_mutable_collections_operations, title: "Mutable collection operations", topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_immutable_collections_with_var, title: "Immutable collections with var", topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_collections__useful_methods_, title: "Collections: useful methods",    topic: "Collections", section: "Scala basics" }
+- { file: interactive_tour_of_scala_classes,                     title: "Classes",                         topic: "Classes",     section: "Scala basics" }
+- { file: interactive_tour_of_scala_classes__continued,          title: "Classes, continued",              topic: "Classes",     section: "Scala basics" }
+- { file: scala3_intro,                                          title: "Scala 3: what changed",           topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_new_syntax,                                     title: "Optional braces & new control syntax", topic: "Scala 3", section: "What's new in Scala 3" }
+- { file: scala3_top_level,                                      title: "Top-level definitions & @main",   topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_enums,                                          title: "Enums & ADTs",                    topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_extension_methods,                              title: "Extension methods",               topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_given_using,                                    title: "given & using",                   topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_union_intersection,                             title: "Union & intersection types",      topic: "Scala 3",     section: "What's new in Scala 3" }
+- { file: scala3_niceties,                                       title: "Smaller niceties",                topic: "Scala 3",     section: "What's new in Scala 3" }

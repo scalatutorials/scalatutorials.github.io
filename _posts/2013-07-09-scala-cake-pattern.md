@@ -5,7 +5,6 @@ description: ""
 category: Code
 tags: [scala]
 ---
-{% include JB/setup %}
 
 I've been trying to understand the [cake pattern] (http://www.cakesolutions.net/teamblogs/2011/12/19/cake-pattern-in-depth/) in Scala for some time, and until I didn't sit and write some code, it didn't click. Here is my attempt to explain it (to myself mostly) hope it might help others get a better understanding of this interesting pattern.
 

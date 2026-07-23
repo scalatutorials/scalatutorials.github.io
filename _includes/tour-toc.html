@@ -1,0 +1,9 @@
+{% assign grouped = site.data.tour | group_by: "section" %}
+{% for group in grouped %}
+<h2 class="mt-8 text-xs font-semibold uppercase tracking-wide text-zinc-500 first:mt-0 dark:text-zinc-400">{{ group.name }}</h2>
+<ol class="mt-2 list-decimal space-y-1 pl-8">
+  {% for p in group.items %}
+  <li><a data-tour-link class="text-zinc-700 hover:text-red-700 hover:underline dark:text-zinc-300 dark:hover:text-red-400" href="/tour/{{ p.file }}.html">{{ p.title }}</a> <span class="text-sm text-zinc-400 dark:text-zinc-500">· {{ p.topic }}</span></li>
+  {% endfor %}
+</ol>
+{% endfor %}

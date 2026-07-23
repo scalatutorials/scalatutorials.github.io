@@ -1,33 +1,18 @@
 ---
-layout: tour
-title: "Scalculator"
-description: "Scala language tour"
-pageNumber: 1
-isLast: false
-group: hidden
-nextPage: interactive_tour_of_scala_operators_are_methods.html
-prevPage: 
-links:
-
-code:
-  |
-  1 + 2 //> 3  
+layout: page
+title: A Tour of Scala
+tagline: Interactive, bite-sized lessons that run in your browser
+permalink: /tour/
 ---
 
-Let's start with some basic arithmetic operations.
+Each lesson pairs a short explanation with a live code editor — read on one side,
+run and tweak real Scala on the other. Nothing to install: the code runs on
+[Scastie](https://scastie.scala-lang.org), the Scala Center's online playground.
 
-Just like most languages, simple arithmetic operations are part of the language.
+Your progress is saved in your browser; pages you've visited get a checkmark.
 
-Play with the editor on the left, type things like
+<p><a class="not-prose inline-block rounded-md bg-red-600 px-5 py-2 font-medium text-white no-underline hover:bg-red-700" href="/tour/interactive_tour_of_scala_overview.html">Start the tour →</a></p>
 
-`2 * 3`
+{% include tour-toc.html %}
 
-`10 / 2`
-
-or `20 / (3 + 7)`
-
-<div class="alert alert-info">
-    <strong>Tip:</strong> to execute the code, click the green <button value="Run" disabled="disabled" name="run" type="submit" class="btn btn-success">
-    <i class="icon-play icon-white"></i>
-</button> button, <br>or press <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
-</div>
+<script defer src="/assets/js/tour.js"></script>
