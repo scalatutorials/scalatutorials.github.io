@@ -2,33 +2,69 @@
 layout: default
 title: null
 ---
-<div class="mx-auto max-w-3xl px-4 pb-10 pt-16 text-center sm:px-6 sm:pt-24">
-  <h1 class="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">Learn Scala in your browser</h1>
-  <p class="mx-auto mt-4 max-w-xl text-lg text-zinc-600 dark:text-zinc-300">
-    Interactive, bite-sized tutorials with a live editor on every page.
-    Read a little, run real Scala 3, tweak it, move on. Nothing to install.
-  </p>
-  <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-    <a href="/tour/" class="rounded-md bg-red-600 px-5 py-2.5 font-medium text-white hover:bg-red-700">Start the tour</a>
-    <a href="/tour/scala3_intro.html" class="rounded-md border border-zinc-300 px-5 py-2.5 font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">What's new in Scala 3</a>
+<div class="bg-zinc-900 [background:radial-gradient(ellipse_at_top_left,#2b2420_0%,#18181b_60%)]">
+  <div class="mx-auto max-w-6xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16">
+    <div class="text-center">
+      <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Learn Scala in your browser</h1>
+      <p class="mx-auto mt-3 max-w-xl text-zinc-300">
+        Interactive, bite-sized tutorials with a live editor on every page — read a little, run real Scala 3, tweak it, move on.
+      </p>
+    </div>
+
+    <div class="mt-10 grid items-center gap-10 lg:grid-cols-[3fr_2fr]">
+
+      <div class="laptop mx-auto">
+        <div class="laptop-screen">
+          <div class="laptop-camera"></div>
+          <div class="laptop-display">
+            <div id="hero-static" class="flex h-full flex-col">
+              <pre class="flex-1 overflow-auto p-4 font-mono text-[13px] leading-6 text-zinc-100 sm:text-sm"><code><span class="text-zinc-500">//Press the green button below to run!</span>
+<span class="text-zinc-500">//e.g. Project Euler problem #1:</span>
+(<span class="text-violet-400">1</span> <span class="text-emerald-400">until</span> <span class="text-violet-400">1000</span>).<span class="text-sky-400">filter</span>(x =&gt;
+  x % <span class="text-violet-400">3</span> == <span class="text-violet-400">0</span> || x % <span class="text-violet-400">5</span> == <span class="text-violet-400">0</span>).<span class="text-sky-400">sum</span></code></pre>
+              <div class="flex justify-end p-3">
+                <button id="hero-run" type="button" class="rounded bg-green-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-green-500">▶ Run</button>
+              </div>
+            </div>
+            <pre id="hero-embed" class="hidden h-full overflow-auto p-4 font-mono text-sm text-zinc-100">//Project Euler problem #1
+(1 until 1000).filter(x =>
+  x % 3 == 0 || x % 5 == 0).sum</pre>
+          </div>
+        </div>
+        <div class="laptop-base"><div class="laptop-notch"></div></div>
+      </div>
+
+      <div class="mx-auto w-full max-w-md rounded-xl border border-zinc-700 bg-zinc-900/80 p-6 text-center">
+        <p class="text-zinc-200">Start the</p>
+        <a href="/tour/" class="mt-2 inline-block rounded-md bg-red-600 px-5 py-2.5 text-lg font-medium text-white hover:bg-red-700">Basic Scala Tutorial</a>
+        <p class="mt-2 text-sm text-zinc-400">
+          The live editor is back — code now runs on <a class="underline hover:text-zinc-200" href="https://scastie.scala-lang.org" target="_blank" rel="noopener">Scastie</a>.
+          Already know Scala 2? See <a class="underline hover:text-zinc-200" href="/tour/scala3_intro.html">what's new in Scala 3</a>.
+        </p>
+
+        <form action="https://scalatutorials.us4.list-manage.com/subscribe/post?u=88bb0ae2c547a703dfa7bb4df&amp;id=89b98532cc" method="post" target="_blank" class="mt-6">
+          <label for="mce-EMAIL" class="block text-sm text-zinc-300">Sign up to be notified when more tutorials are available</label>
+          <div class="mt-2 flex gap-2">
+            <input type="email" value="" name="EMAIL" id="mce-EMAIL" required placeholder="email address"
+                   class="w-full min-w-0 flex-1 rounded-md border border-zinc-600 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:border-zinc-400 focus:outline-none">
+            <button type="submit" name="subscribe" class="shrink-0 rounded-md bg-emerald-500 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-600">Subscribe</button>
+          </div>
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_88bb0ae2c547a703dfa7bb4df_89b98532cc" tabindex="-1" value="">
+          </div>
+        </form>
+
+        <p class="mt-4 text-sm">
+          <a class="text-zinc-400 underline hover:text-zinc-200" href="https://x.com/intent/post?text=Interactive%20Scala%20tutorials%20that%20run%20in%20your%20browser&amp;url=https%3A%2F%2Fscalatutorials.com" target="_blank" rel="noopener">Share on X</a>
+        </p>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<div class="mx-auto max-w-2xl px-4 pb-16 sm:px-6">
-  <div class="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-{% highlight scala %}
-val greeting = "Hello, Scala 3"          // type inference
-val numbers = List(1, 2, 3, 4, 5)
-val doubled = numbers.map(_ * 2)         // higher-order functions
-
-enum Suit:                               // Scala 3 enums
-  case Hearts, Diamonds, Clubs, Spades
-
-@main def hello() = println(greeting)    // no boilerplate
-{% endhighlight %}
-  </div>
-
-  <dl class="mt-12 grid gap-8 sm:grid-cols-3">
+<div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+  <dl class="grid gap-8 sm:grid-cols-3">
     <div>
       <dt class="font-semibold text-zinc-900 dark:text-zinc-100">Run as you read</dt>
       <dd class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Every lesson has a live editor powered by Scastie, the Scala Center's playground.</dd>
@@ -43,3 +79,34 @@ enum Suit:                               // Scala 3 enums
     </div>
   </dl>
 </div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("hero-run");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      btn.disabled = true;
+      btn.textContent = "Loading compiler…";
+      var s = document.createElement("script");
+      s.src = "https://scastie.scala-lang.org/embedded.js";
+      s.onload = function () {
+        var staticView = document.getElementById("hero-static");
+        var embedTarget = document.getElementById("hero-embed");
+        staticView.remove();
+        embedTarget.classList.remove("hidden");
+        try {
+          scastie.Embedded("#hero-embed", {
+            theme: "dark",
+            isWorksheetMode: true,
+            targetType: "scala3"
+          });
+        } catch (e) { console.warn("Scastie embed failed:", e); }
+      };
+      s.onerror = function () {
+        btn.disabled = false;
+        btn.textContent = "▶ Run";
+      };
+      document.body.appendChild(s);
+    });
+  })();
+</script>

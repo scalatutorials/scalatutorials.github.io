@@ -34,13 +34,62 @@
 
 /* Make the Scastie embed fill the editor pane (its own CSS sets a fixed
    800px width and a capped height). */
-#editor-pane .scastie.embedded {
+#editor-pane .scastie.embedded,
+.laptop-display .scastie.embedded {
   height: 100%;
   width: 100%;
   max-width: 100%;
 }
-#editor-pane .scastie.embedded .content {
+#editor-pane .scastie.embedded .content,
+.laptop-display .scastie.embedded .content {
   height: 100%;
+}
+
+/* Vector MacBook for the homepage hero (spiritual successor of the old
+   photo of a MacBook running ScalaKata). */
+.laptop {
+  max-width: 40rem;
+  width: 100%;
+}
+.laptop-screen {
+  position: relative;
+  border: 12px solid #18181b;
+  border-bottom-width: 22px;
+  border-radius: 1rem 1rem 0 0;
+  background: #18181b;
+  box-shadow: inset 0 0 2px 2px #3f3f46;
+}
+.laptop-camera {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  border-radius: 9999px;
+  background: #52525b;
+}
+.laptop-display {
+  aspect-ratio: 16 / 10;
+  overflow: auto;
+  border-radius: 2px;
+  background: #1c1e1a;
+}
+.laptop-base {
+  height: 14px;
+  margin: 0 -2.5rem;
+  border-radius: 0 0 0.9rem 0.9rem;
+  background: linear-gradient(#e4e4e7, #a1a1aa 70%, #71717a);
+}
+.laptop-notch {
+  width: 5.5rem;
+  height: 6px;
+  margin: 0 auto;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: #a1a1aa;
+}
+@media (max-width: 480px) {
+  .laptop-base { margin: 0 -1rem; }
 }
 
 /* Minimal Rouge (syntax highlighting) scheme, light + dark. */
