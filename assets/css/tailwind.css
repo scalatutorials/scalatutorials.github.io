@@ -48,21 +48,16 @@
 /* Vector MacBook for the homepage hero (spiritual successor of the old
    photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
    while you interact with the editor inside it. */
-.laptop-stage {
-  perspective: 2200px;
-  perspective-origin: 50% 35%;
-}
 .laptop {
   max-width: 40rem;
   width: 100%;
-  transform: rotateX(6deg) rotateY(10deg);
-  transform-style: preserve-3d;
+  transform: rotate(2.5deg);
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: drop-shadow(18px 26px 26px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(10px 18px 22px rgba(0, 0, 0, 0.45));
 }
 .laptop:hover,
 .laptop:focus-within {
-  transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  transform: rotate(0deg);
 }
 /* silver MacBook Air style bezel */
 .laptop-screen {
