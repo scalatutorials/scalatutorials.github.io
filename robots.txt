@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /homepage_editor
+Disallow:
+
+Sitemap: https://scalatutorials.com/sitemap.txt

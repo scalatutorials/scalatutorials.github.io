@@ -15,6 +15,9 @@
   .callout {
     @apply my-4 rounded-md border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-900 dark:border-sky-900 dark:bg-sky-950 dark:text-sky-200;
   }
+  .callout-warn {
+    @apply my-4 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200;
+  }
 
   /* Tick shown next to tour pages already visited (tracked in localStorage). */
   .visited-page::after {

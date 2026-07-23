@@ -84,6 +84,21 @@ Own TOC group + homepage entry point.
 - Click-through of tour navigation, TOC, homepage links in a real browser.
 - Old URLs (`/tour/interactive_tour_of_scala_*.html`, `/tour/toc.html`) unchanged.
 
+## Deviations discovered during implementation
+
+- Two orphaned-but-useful "Collections" pages (accessing elements, concatenation) were
+  never linked from the old TOC; they are now wired into the canonical order. Two
+  "Collections Summary" near-duplicates and two hidden Scalculator duplicates deleted.
+- `tour/interactive_tour_of_scala_work_in_progress.md` (orphaned end page with a dead
+  email CTA) deleted; the About page's Contributing section replaces it.
+- Final tour size: 34 basics pages + 8 Scala 3 pages = 42.
+- `@main` cannot appear inside worksheet-wrapped code; the top-level page shows it in
+  a comment/prose and the runnable snippet calls a plain method instead.
+- `interactive_tour_of_scala_final_variables` intentionally fails compilation
+  (reassignment to val is the lesson) — the snippet checker asserts the specific error.
+- README rewritten around dev.sh; robots.txt cleaned (old /homepage_editor disallow).
+- Old Disqus comments on 2013 posts are gone with the JB machinery (accepted loss).
+
 ## Implementation order
 1. Branch; commit spec.
 2. Infra: Gemfile, dev.sh, Tailwind input, `_config.yml` cleanup, deletions.

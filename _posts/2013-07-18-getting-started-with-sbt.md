@@ -66,6 +66,6 @@ Get started with a simple real world structure for a simple Scala project
 4. To open the project in Eclipse: File -> Import -> Existing Projects into Workspace
 4. for Intellij IDEA, in the project folder, type `sbt gen-idea`
 
-  <div class="alert alert-info">
+  <div class="callout">
   NOTE: Intellij just released a new <a href="http://blog.jetbrains.com/scala/2013/07/17/sbt-plugin-nightly-builds/">early release SBT plugin</a> (July 17, 2013) - which can import SBT projects without the need for <code>sbt gen-idea</code>
   </div>

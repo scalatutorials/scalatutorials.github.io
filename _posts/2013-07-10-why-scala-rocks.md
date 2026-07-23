@@ -37,7 +37,7 @@ class Person(private[this] var _sanity:Int = 50) {
 }
 ```
 
-<div class="alert alert-error">
+<div class="callout-warn">
 Note - idiomatic Scala discourages mutable objects, so prefer using <code>val</code> which is final and will only generate an automatic getter
 </div>
 
@@ -73,6 +73,6 @@ This will print pretty much the same as the Ruby example
     Here, you can have your splines back.
 
 
-<div class="alert alert-error">Note - don't do this unless you have a very good reason, it has performance and code smell issues</div>
+<div class="callout-warn">Note - don't do this unless you have a very good reason, it has performance and code smell issues</div>
 
 There are of course many other features that make Scala "rock", which probably deserve a separate post.
