@@ -7,7 +7,7 @@ links:
 - text: Tour of Scala - Operators
   url: https://docs.scala-lang.org/tour/operators.html
 code: |
-  (1).+(2) //> 3
+  (1).+(2)
 ---
 
 In Scala, primitives are represented as objects. (Although after compilation they use Java's primitives when possible for performance.)

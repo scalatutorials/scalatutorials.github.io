@@ -2,9 +2,9 @@
 layout: tour
 title: "Variables"
 code: |
-  var x = 1 + 2 //> x = 3
+  var x = 1 + 2
   println(x)
-  x = 3 * 4 //> x = 12
+  x = 3 * 4
   println(x)
 ---
 

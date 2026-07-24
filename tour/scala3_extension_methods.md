@@ -10,8 +10,8 @@ code: |
     def squared = i * i
     def isEven = i % 2 == 0
 
-  println(5.squared)      //> 25
-  println(4.isEven)       //> true
+  println(5.squared)
+  println(4.isEven)
 
   //works on any type, including other people's classes
   extension (s: String)
@@ -19,15 +19,15 @@ code: |
     def initials = s.split(" ").map(_.head).mkString(".")
 
   println("scala rocks".vowels)
-  println("Martin Odersky".initials)   //> M.O
+  println("Martin Odersky".initials)
 
   //extensions can take parameters and be generic
   extension [T](list: List[T])
     def second: T = list.tail.head
     def penultimate: T = list.init.last
 
-  println(List(1, 2, 3, 4).second)       //> 2
-  println(List(1, 2, 3, 4).penultimate)  //> 3
+  println(List(1, 2, 3, 4).second)
+  println(List(1, 2, 3, 4).penultimate)
 
   //the Scala 2 way, for comparison (still works, but wordier):
   implicit class RichIntOld(private val i: Int) {

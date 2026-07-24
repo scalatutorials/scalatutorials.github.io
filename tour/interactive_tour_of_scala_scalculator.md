@@ -2,7 +2,7 @@
 layout: tour
 title: "Scalculator"
 code: |
-  1 + 2 //> 3
+  1 + 2
 ---
 
 Let's start with some basic arithmetic operations.

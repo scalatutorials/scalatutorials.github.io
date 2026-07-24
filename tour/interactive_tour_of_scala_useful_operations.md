@@ -11,27 +11,27 @@ code: |
   //from 2 to 10 with jumps of 3
   val range3 = 2 until 10 by 3
 
-  println(range3.toList) //List(2, 5, 8)
+  println(range3.toList)
 
   //Number convenience methods
   val num = -5
   val numAbs = num.abs //absolute value
   val max5or7 = numAbs.max(7)
   val min5or7 = numAbs.min(7)
-  println(numAbs) //5
-  println(max5or7) //7
-  println(min5or7) //5
+  println(numAbs)
+  println(max5or7)
+  println(min5or7)
 
   //String operations
 
   val reverse = "Scala".reverse //reverse a string
-  println(reverse) //alacS
+  println(reverse)
 
   val cap = "scala".capitalize //make first char caps
-  println(cap) //Scala
+  println(cap)
 
   val multi = "Scala!" * 7 //repeat n times
-  println(multi) //Scala!Scala!Scala!Scala!Scala!Scala!Scala!
+  println(multi)
 
   val int = "123".toInt //parse as Int
   println(int)
@@ -40,11 +40,11 @@ code: |
 
   //filter - keep only items larger than 4
   val moreThan4 = range.filter(_ > 4)
-  println(moreThan4) //Vector(5, 6, 7, 8, 9, 10)
+  println(moreThan4)
 
   //map - transform each item in the collection
   val doubleIt = range2.map(_ * 2)
-  println(doubleIt) //Vector(2, 4, 6, 8, 10, 12, 14, 16, 18)
+  println(doubleIt)
 ---
 
 Scala has a lot of "syntactic sugar" for many common operations.

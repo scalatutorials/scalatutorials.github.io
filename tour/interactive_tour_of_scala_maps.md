@@ -21,7 +21,7 @@ code: |
   //the "mutable version" of Map
 
   //Maps remove duplicate keys:
-  println(Map("a" -> 1, "a" -> 2)) //Map(a -> 2)
+  println(Map("a" -> 1, "a" -> 2))
 
   //Get items using map(key)
   val one = map1("one")
@@ -32,12 +32,12 @@ code: |
   //the get method returns an Option, which will be explained later
   val fourExistsOption = map1.get("four")
 
-  println(one) // 1
-  println(fourExistsOption.isDefined) // false
+  println(one)
+  println(fourExistsOption.isDefined)
 
   //You can set / modify items using map(key) = value
   mmap("d") = 4
-  println(mmap) //HashMap(a -> 1, b -> 2, c -> 3, d -> 4)
+  println(mmap)
 
   //Concatenation using the ++ operator
   //(removes duplicate keys, order not guaranteed)
@@ -45,19 +45,18 @@ code: |
   //because ++ keeps the key type of the map on its left
   val concatenated = map2 ++ map1 ++ mmap
   println(concatenated)
-  // HashMap(three -> 3, 1 -> one, b -> 2, 3.0 -> false, 2 -> 2.0, c -> 3, one -> 1, d -> 4, two -> 2, a -> 1)
   //Concatenation doesn't modify the maps themselves
-  println(map1) //Map(one -> 1, two -> 2, three -> 3)
+  println(map1)
 
   //Removing elements (mutable Maps only)
   mmap -= "c"
-  println(mmap) //HashMap(a -> 1, b -> 2, d -> 4)
+  println(mmap)
 
   //Adding elements (mutable Maps only)
   mmap += "e" -> 5
   mmap ++= Map("f" -> 6, "g" -> 7)
 
-  println(mmap) //HashMap(a -> 1, b -> 2, d -> 4, e -> 5, f -> 6, g -> 7)
+  println(mmap)
 
   //Find
   val personMap = Map(("Alice",1), ("Bob",2), ("Carol",3))
@@ -65,8 +64,8 @@ code: |
   val findBob = findByName("Bob")
   val findEli = findByName("Eli")
 
-  println(findBob) //2
-  println(findEli) //4
+  println(findBob)
+  println(findEli)
 ---
 
 - Maps are constructed simply using `Map(key1 -> value1, key2 -> value2, ...)`

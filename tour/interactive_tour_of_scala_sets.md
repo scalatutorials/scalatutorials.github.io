@@ -17,39 +17,39 @@ code: |
   val mset = mutable.HashSet("a", "b", "c") //the "mutable version" of Set
 
   //Sets remove duplicates
-  println(Set(1,2,3,2,4,3,2,1,2)) //Set(1, 2, 3, 4)
+  println(Set(1,2,3,2,4,3,2,1,2))
 
   //Check if item exists using (item)
   val oneExists = set1(1)
   val fourExists = set1(4)
-  println(oneExists) // true
-  println(fourExists) // false
+  println(oneExists)
+  println(fourExists)
 
   //You can "modify" items the same way as for Lists
   //(DON'T use it this way, use mset -= "a" instead)
   mset("a") = false
-  println(mset) //HashSet(b, c)
+  println(mset)
 
   //Concatenation using the ++ operator
   //(removes duplicates, order not guaranteed)
   val concatenated = set1 ++ set2 ++ mset
-  println(concatenated) // HashSet(1, a, true, 2, b, 3, c)
+  println(concatenated)
   //Concatenation doesn't modify the sets themselves
-  println(set1) //Set(1, 2, 3)
+  println(set1)
 
   //Removing elements (mutable Sets only)
   mset -= "c"
-  println(mset) //HashSet(b)
+  println(mset)
 
   //Adding elements (mutable Sets only)
   mset += "e"
   mset ++= Set("f", "g")
 
-  println(mset) //HashSet(b, e, f, g)
+  println(mset)
 
   //Diff
   val diffSet = Set(1,2,3,4) diff Set(2,3)
-  println(diffSet) // Set(1, 4)
+  println(diffSet)
 
   //Find (stops when item is found)
 
@@ -61,8 +61,8 @@ code: |
   val findBob = findByName("Bob")
   val findEli = findByName("Eli")
 
-  println(findBob._2) //2
-  println(findEli._2) //4
+  println(findBob._2)
+  println(findEli._2)
 ---
 
 - Sets are constructed simply using `Set(element1, element2, ...)`

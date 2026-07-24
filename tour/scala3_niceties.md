@@ -41,7 +41,7 @@ code: |
 
   import Measures.*
   val distance = Meters(1.5) + Meters(2.5)
-  println(distance.show)     //> 4.0m
+  println(distance.show)
   //println(distance * 2.0)  //error: Meters is not a Double on the outside
 ---
 

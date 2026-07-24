@@ -10,8 +10,8 @@ code: |
     case Red, Green, Blue
 
   println(Color.values.mkString(", "))
-  println(Color.Red.ordinal)          //> 0
-  println(Color.valueOf("Green"))     //> Green
+  println(Color.Red.ordinal)
+  println(Color.valueOf("Green"))
 
   //enums can have parameters and methods
   enum Planet(mass: Double, radius: Double):
