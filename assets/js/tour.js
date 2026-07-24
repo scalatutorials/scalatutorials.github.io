@@ -31,6 +31,23 @@
       });
     }
 
+    // Arrow-key navigation (skipped while typing in the editor, an input,
+    // or while the Contents dialog is open).
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+      if (dialog && dialog.open) return;
+      var active = document.activeElement;
+      if (active) {
+        var tag = active.tagName;
+        if (tag === "INPUT" || tag === "TEXTAREA" || active.isContentEditable) return;
+        if (active.closest && active.closest(".scastie")) return;
+      }
+      if (e.target && e.target.closest && e.target.closest(".scastie")) return;
+      var link = document.querySelector(e.key === "ArrowRight" ? "[data-nav-next]" : "[data-nav-prev]");
+      if (link) window.location.href = link.href;
+    });
+
     // Progress tracking; same localStorage key/format as the old site so
     // returning readers keep their checkmarks.
     try {

@@ -7,4 +7,4 @@ permalink: /toc.html
 
 {% include tour-toc.html %}
 
-<script defer src="/assets/js/tour.js"></script>
+<script defer src="/assets/js/tour.js?v={{ site.time | date: '%s' }}"></script>

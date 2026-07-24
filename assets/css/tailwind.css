@@ -184,7 +184,7 @@
    photo of a MacBook running ScalaKata). Tilted in 3D at rest; straightens
    while you interact with the editor inside it. */
 .laptop {
-  max-width: 40rem;
+  max-width: 34rem;
   width: 100%;
   filter:
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))

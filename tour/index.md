@@ -15,4 +15,4 @@ Your progress is saved in your browser; pages you've visited get a checkmark.
 
 {% include tour-toc.html %}
 
-<script defer src="/assets/js/tour.js"></script>
+<script defer src="/assets/js/tour.js?v={{ site.time | date: '%s' }}"></script>
