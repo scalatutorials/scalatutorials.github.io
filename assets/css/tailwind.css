@@ -75,7 +75,25 @@
 #editor-pane .scastie .cm-gutters {
   border-right: 1px solid #e4e4e7 !important;
 }
+/* Scastie paints the console-switcher text white for its own dark bar;
+   on our light background it needs a dark label. */
+#editor-pane .scastie .switcher-hide,
+#editor-pane .scastie .switcher-show,
+#editor-pane .scastie .console-label,
+.laptop-display .scastie .switcher-hide,
+.laptop-display .scastie .switcher-show,
+.laptop-display .scastie .console-label {
+  color: #52525b !important;
+}
 @media (prefers-color-scheme: dark) {
+  #editor-pane .scastie .switcher-hide,
+  #editor-pane .scastie .switcher-show,
+  #editor-pane .scastie .console-label,
+  .laptop-display .scastie .switcher-hide,
+  .laptop-display .scastie .switcher-show,
+  .laptop-display .scastie .console-label {
+    color: #d4d4d8 !important;
+  }
   #editor-pane .scastie .main-panel,
   #editor-pane .scastie .cm-gutters,
   #editor-pane .scastie .editor-wrapper,
@@ -94,26 +112,42 @@
   }
 }
 
-/* Inside the homepage laptop, recolor Scastie's Solarized-teal chrome to
-   match the laptop display so the embed blends into the screen.
+/* Inside the homepage laptop, recolor Scastie's chrome to match the
+   laptop display so the embed blends into the screen (light and dark).
    !important because Scastie injects its stylesheet after ours. */
 .laptop-display .scastie .main-panel,
-.laptop-display .scastie .cm-gutters {
-  background: #1c1e1a !important;
-}
-.laptop-display .scastie .cm-gutters {
-  border-right: 1px solid #2e312b !important;
-}
-.laptop-display .scastie .console {
-  background: #141612 !important;
-}
+.laptop-display .scastie .cm-gutters,
 .laptop-display .scastie nav.editor-mobile,
 .laptop-display .scastie .editor-wrapper,
 .laptop-display .scastie .switcher-hide,
 .laptop-display .scastie .switcher-show,
 .laptop-display .scastie .handler,
 .laptop-display .scastie li.logo {
-  background: #1c1e1a !important;
+  background: #fafafa !important;
+}
+.laptop-display .scastie .console {
+  background: #f4f4f5 !important;
+}
+.laptop-display .scastie .cm-gutters {
+  border-right: 1px solid #e4e4e7 !important;
+}
+@media (prefers-color-scheme: dark) {
+  .laptop-display .scastie .main-panel,
+  .laptop-display .scastie .cm-gutters,
+  .laptop-display .scastie nav.editor-mobile,
+  .laptop-display .scastie .editor-wrapper,
+  .laptop-display .scastie .switcher-hide,
+  .laptop-display .scastie .switcher-show,
+  .laptop-display .scastie .handler,
+  .laptop-display .scastie li.logo {
+    background: #1c1e1a !important;
+  }
+  .laptop-display .scastie .console {
+    background: #141612 !important;
+  }
+  .laptop-display .scastie .cm-gutters {
+    border-right: 1px solid #2e312b !important;
+  }
 }
 
 /* Vector MacBook for the homepage hero (spiritual successor of the old
@@ -159,7 +193,12 @@
   aspect-ratio: 16 / 9;
   overflow: auto;
   border-radius: 2px;
-  background: #1c1e1a;
+  background: #fafafa;
+}
+@media (prefers-color-scheme: dark) {
+  .laptop-display {
+    background: #1c1e1a;
+  }
 }
 .laptop-base {
   height: 16px;
