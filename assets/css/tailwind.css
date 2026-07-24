@@ -32,6 +32,26 @@
   }
 }
 
+/* Code blocks in lesson prose: the typography plugin defaults to a dark
+   block even in light mode, which clashes with our light Rouge palette.
+   Use a light block in light mode (dark mode keeps the inverted default). */
+.prose {
+  --tw-prose-pre-bg: #f4f4f5;
+  --tw-prose-pre-code: #27272a;
+}
+.prose pre {
+  border: 1px solid #e4e4e7;
+}
+@media (prefers-color-scheme: dark) {
+  .prose {
+    --tw-prose-pre-bg: #18181b;
+    --tw-prose-pre-code: #d4d4d8;
+  }
+  .prose pre {
+    border-color: #27272a;
+  }
+}
+
 /* Inline code: drop the typography plugin's literal backtick decorations
    and render Bootstrap-style chips (pink/red on a soft background). */
 .prose :not(pre) > code::before,
@@ -83,8 +103,10 @@
   color: #ffffff !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 7px;
-  padding: 5px 12px !important;
+  gap: 6px;
+  padding: 4px 10px !important;
+  font-size: 13px;
+  border-radius: 0.5rem !important;
 }
 #editor-pane .scastie li.run-button:hover,
 .laptop-display .scastie li.run-button:hover {
@@ -159,6 +181,16 @@
   #editor-pane .scastie .cm-gutters {
     border-right: 1px solid #27272a !important;
   }
+}
+
+/* Inside the homepage laptop: slightly smaller editor type and inner
+   padding so code and worksheet results keep clear of the screen edges. */
+.laptop-display .scastie .cm-scroller {
+  font-size: 14px !important;
+  padding: 10px 12px 10px 4px;
+}
+.laptop-display .scastie .console {
+  font-size: 12px;
 }
 
 /* Inside the homepage laptop, recolor Scastie's chrome to match the

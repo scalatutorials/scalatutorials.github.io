@@ -17,7 +17,7 @@
     <section class="flex flex-col lg:min-h-0">
       <div class="px-4 pb-4 pt-6 sm:px-6 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:px-8">
         <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ cur.topic }} · {{ idx | plus: 1 }} of {{ total }}
-          <span id="seen-badge" class="hidden font-medium text-green-600 dark:text-green-500" title="You have already visited this page">✓ seen</span>
+          <button id="seen-badge" type="button" class="hidden cursor-pointer font-semibold text-green-600 hover:text-green-700 dark:text-green-500 dark:hover:text-green-400" title="You've seen this page. Click to unmark.">✓</button>
         </p>
         <h1 class="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ page.title }}</h1>
         {% if page.lead %}
@@ -85,6 +85,9 @@
       {% endfor %}
     </ol>
     {% endfor %}
+  </div>
+  <div class="flex justify-end border-t border-zinc-200 px-5 py-2.5 dark:border-zinc-700">
+    <button data-clear-history type="button" class="text-sm text-zinc-500 underline decoration-zinc-300 underline-offset-2 hover:text-red-600 dark:decoration-zinc-600 dark:hover:text-red-400">Clear history</button>
   </div>
 </dialog>
 

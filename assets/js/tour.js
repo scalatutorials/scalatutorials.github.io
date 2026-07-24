@@ -45,6 +45,30 @@
       });
     }
 
+    // A page counts as "seen" only once you move on from it via next/prev
+    // (not merely by opening it).
+    function markVisited() {
+      try {
+        var v = JSON.parse(localStorage.getItem("visited") || "{}") || {};
+        v[location.pathname] = true;
+        localStorage.setItem("visited", JSON.stringify(v));
+      } catch (e) { /* localStorage unavailable */ }
+    }
+    document.querySelectorAll("[data-nav-next], [data-nav-prev]").forEach(function (a) {
+      a.addEventListener("click", markVisited);
+    });
+
+    document.querySelectorAll("[data-clear-history]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        try { localStorage.removeItem("visited"); } catch (e) { /* unavailable */ }
+        document.querySelectorAll("[data-tour-link].visited-page").forEach(function (a) {
+          a.classList.remove("visited-page");
+        });
+        var b = document.getElementById("seen-badge");
+        if (b) b.classList.add("hidden");
+      });
+    });
+
     // Cmd/Ctrl+Enter runs the code even when the editor isn't focused:
     // forward it to Scastie's own Run button. (When the editor has focus,
     // Scastie handles the shortcut itself.)
@@ -73,18 +97,29 @@
       }
       if (e.target && e.target.closest && e.target.closest(".scastie")) return;
       var link = document.querySelector(e.key === "ArrowRight" ? "[data-nav-next]" : "[data-nav-prev]");
-      if (link) window.location.href = link.href;
+      if (link) {
+        markVisited();
+        window.location.href = link.href;
+      }
     });
 
-    // Progress tracking; same localStorage key/format as the old site so
-    // returning readers keep their checkmarks.
+    // Progress display; same localStorage key/format as the old site so
+    // returning readers keep their checkmarks. (Marking happens in
+    // markVisited, on next/prev navigation only.)
     try {
       var visited = JSON.parse(localStorage.getItem("visited") || "{}") || {};
-      var seenBefore = !!visited[location.pathname];
       var seenBadge = document.getElementById("seen-badge");
-      if (seenBadge && seenBefore) seenBadge.classList.remove("hidden");
-      visited[location.pathname] = true;
-      localStorage.setItem("visited", JSON.stringify(visited));
+      if (seenBadge) {
+        if (visited[location.pathname]) seenBadge.classList.remove("hidden");
+        seenBadge.addEventListener("click", function () {
+          try {
+            var v = JSON.parse(localStorage.getItem("visited") || "{}") || {};
+            delete v[location.pathname];
+            localStorage.setItem("visited", JSON.stringify(v));
+          } catch (err) { /* localStorage unavailable */ }
+          seenBadge.classList.add("hidden");
+        });
+      }
       document.querySelectorAll("[data-tour-link]").forEach(function (a) {
         if (visited[a.getAttribute("href")]) a.classList.add("visited-page");
       });
