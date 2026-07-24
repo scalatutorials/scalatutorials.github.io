@@ -122,7 +122,9 @@
 .laptop {
   max-width: 40rem;
   width: 100%;
-  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.45));
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 26px 40px rgba(0, 0, 0, 0.45));
 }
 /* silver MacBook Air style bezel */
 .laptop-screen {
@@ -154,7 +156,7 @@
   background: radial-gradient(circle at 35% 35%, #52525b, #18181b 70%);
 }
 .laptop-display {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: auto;
   border-radius: 2px;
   background: #1c1e1a;
@@ -163,6 +165,7 @@
   height: 16px;
   margin: 0 -2.75rem;
   border-radius: 2px 2px 0.9rem 0.9rem;
+  border-bottom: 1px solid #45454d;
   background: linear-gradient(#f4f4f5, #c4c4cc 30%, #8e8e96 78%, #5b5b63);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.35) inset,
