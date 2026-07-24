@@ -89,5 +89,16 @@ title: null
         targetType: "scala3"
       });
     } catch (e) { console.warn("Scastie embed failed:", e); }
+
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Enter" || !(ev.metaKey || ev.ctrlKey)) return;
+      var active = document.activeElement;
+      if (active && active.closest && active.closest(".scastie")) return;
+      var runBtn = document.querySelector(".scastie li.run-button");
+      if (runBtn) {
+        ev.preventDefault();
+        runBtn.click();
+      }
+    });
   });
 </script>

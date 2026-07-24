@@ -31,6 +31,20 @@
       });
     }
 
+    // Cmd/Ctrl+Enter runs the code even when the editor isn't focused:
+    // forward it to Scastie's own Run button. (When the editor has focus,
+    // Scastie handles the shortcut itself.)
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" || !(e.metaKey || e.ctrlKey)) return;
+      var active = document.activeElement;
+      if (active && active.closest && active.closest(".scastie")) return;
+      var runBtn = document.querySelector(".scastie li.run-button");
+      if (runBtn) {
+        e.preventDefault();
+        runBtn.click();
+      }
+    });
+
     // Arrow-key navigation (skipped while typing in the editor, an input,
     // or while the Contents dialog is open).
     document.addEventListener("keydown", function (e) {
