@@ -80,6 +80,9 @@
     // returning readers keep their checkmarks.
     try {
       var visited = JSON.parse(localStorage.getItem("visited") || "{}") || {};
+      var seenBefore = !!visited[location.pathname];
+      var seenBadge = document.getElementById("seen-badge");
+      if (seenBadge && seenBefore) seenBadge.classList.remove("hidden");
       visited[location.pathname] = true;
       localStorage.setItem("visited", JSON.stringify(visited));
       document.querySelectorAll("[data-tour-link]").forEach(function (a) {

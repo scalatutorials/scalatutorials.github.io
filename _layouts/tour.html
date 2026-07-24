@@ -16,7 +16,9 @@
 
     <section class="flex flex-col lg:min-h-0">
       <div class="px-4 pb-4 pt-6 sm:px-6 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:px-8">
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ cur.topic }} · {{ idx | plus: 1 }} of {{ total }}</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ cur.topic }} · {{ idx | plus: 1 }} of {{ total }}
+          <span id="seen-badge" class="hidden font-medium text-green-600 dark:text-green-500" title="You have already visited this page">✓ seen</span>
+        </p>
         <h1 class="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ page.title }}</h1>
         {% if page.lead %}
         <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-300">{{ page.lead }}</p>
