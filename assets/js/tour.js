@@ -7,7 +7,7 @@
   ready(function () {
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     var isMac = /Mac|iP(hone|ad|od)/.test(navigator.platform || "");
-    document.documentElement.style.setProperty("--run-kbd", isMac ? '"⌘↩"' : '"Ctrl+↩"');
+    document.documentElement.style.setProperty("--run-kbd", isMac ? '"⌘ ↩"' : '"Ctrl+↩"');
     if (!isMac) {
       // Scastie hardcodes its tooltip to "Run (Cmd-Enter)"; its keymap is
       // actually Ctrl-Enter off macOS. Fix the tooltip once the embed mounts.
