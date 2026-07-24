@@ -116,8 +116,6 @@ code: |
   useless.reticulate("splines", "marbles")
 ---
 
-### Overview
-
 Welcome to the basic Scala tour! It is aimed at anyone who would like to learn Scala's basics, while writing and running code directly in the browser.
 On the left is a summary of Scala's language features that will be covered.
 
