@@ -82,6 +82,8 @@ title: null
   document.addEventListener("DOMContentLoaded", function () {
     if (!window.scastie || !document.getElementById("hero-embed")) return;
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var isMac = /Mac|iP(hone|ad|od)/.test(navigator.platform || "");
+    document.documentElement.style.setProperty("--run-kbd", isMac ? '"⌘↩"' : '"Ctrl+↩"');
     try {
       scastie.Embedded("#hero-embed", {
         theme: dark ? "dark" : "light",

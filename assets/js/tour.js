@@ -6,6 +6,8 @@
 
   ready(function () {
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var isMac = /Mac|iP(hone|ad|od)/.test(navigator.platform || "");
+    document.documentElement.style.setProperty("--run-kbd", isMac ? '"⌘↩"' : '"Ctrl+↩"');
 
     if (window.scastie && document.getElementById("tour-code")) {
       try {

@@ -86,6 +86,19 @@
 .laptop-display .scastie li.run-button:hover {
   background: #075985 !important;
 }
+/* Key-cap shortcut hint on the Run button; the label comes from a CSS
+   variable set in JS (Cmd on macOS, Ctrl elsewhere). */
+#editor-pane .scastie li.run-button::after,
+.laptop-display .scastie li.run-button::after {
+  content: var(--run-kbd, "Ctrl+\21A9");
+  margin-left: 8px;
+  padding: 1px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  line-height: 1.4;
+}
 
 /* Scastie paints the console-switcher text white for its own dark bar;
    on our light background it needs a dark label. */
