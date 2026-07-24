@@ -8,6 +8,18 @@
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     var isMac = /Mac|iP(hone|ad|od)/.test(navigator.platform || "");
     document.documentElement.style.setProperty("--run-kbd", isMac ? '"⌘↩"' : '"Ctrl+↩"');
+    if (!isMac) {
+      // Scastie hardcodes its tooltip to "Run (Cmd-Enter)"; its keymap is
+      // actually Ctrl-Enter off macOS. Fix the tooltip once the embed mounts.
+      var titleTimer = setInterval(function () {
+        var btns = document.querySelectorAll(".scastie li.run-button");
+        if (btns.length) {
+          btns.forEach(function (b) { b.setAttribute("title", "Run (Ctrl+Enter)"); });
+          clearInterval(titleTimer);
+        }
+      }, 500);
+      setTimeout(function () { clearInterval(titleTimer); }, 15000);
+    }
 
     if (window.scastie && document.getElementById("tour-code")) {
       try {

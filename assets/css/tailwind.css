@@ -81,23 +81,29 @@
 .laptop-display .scastie li.run-button {
   background: #0369a1 !important;
   color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px;
+  padding: 5px 12px !important;
 }
 #editor-pane .scastie li.run-button:hover,
 .laptop-display .scastie li.run-button:hover {
   background: #075985 !important;
 }
 /* Key-cap shortcut hint on the Run button; the label comes from a CSS
-   variable set in JS (Cmd on macOS, Ctrl elsewhere). */
+   variable set in JS (matching Scastie's own keymap: Meta-Enter on macOS,
+   Ctrl-Enter elsewhere). */
 #editor-pane .scastie li.run-button::after,
 .laptop-display .scastie li.run-button::after {
   content: var(--run-kbd, "Ctrl+\21A9");
-  margin-left: 8px;
-  padding: 1px 6px;
+  display: inline-block;
+  padding: 2px 7px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.15);
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 10.5px;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 /* Scastie paints the console-switcher text white for its own dark bar;
