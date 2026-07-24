@@ -75,6 +75,18 @@
 #editor-pane .scastie .cm-gutters {
   border-right: 1px solid #e4e4e7 !important;
 }
+/* Scastie's Run pill is powder blue with white text: fine on its own
+   dark chrome, unreadable on ours. Deepen it for contrast (both modes). */
+#editor-pane .scastie li.run-button,
+.laptop-display .scastie li.run-button {
+  background: #0369a1 !important;
+  color: #ffffff !important;
+}
+#editor-pane .scastie li.run-button:hover,
+.laptop-display .scastie li.run-button:hover {
+  background: #075985 !important;
+}
+
 /* Scastie paints the console-switcher text white for its own dark bar;
    on our light background it needs a dark label. */
 #editor-pane .scastie .switcher-hide,

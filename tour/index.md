@@ -11,7 +11,7 @@ run and tweak real Scala on the other. Nothing to install: the code runs on
 
 Your progress is saved in your browser; pages you've visited get a checkmark.
 
-<p><a class="not-prose inline-block rounded-md bg-red-600 px-5 py-2 font-medium text-white no-underline hover:bg-red-700" href="/tour/interactive_tour_of_scala_scalculator.html">Start the tour →</a> <span class="text-sm text-zinc-500 dark:text-zinc-400">(or begin with the <a href="/tour/interactive_tour_of_scala_overview.html">overview</a> for a whirlwind feature tour)</span></p>
+<p><a class="not-prose inline-block rounded-md bg-orange-600 px-5 py-2 font-medium text-white no-underline hover:bg-orange-700" href="/tour/interactive_tour_of_scala_scalculator.html">Start the tour →</a> <span class="text-sm text-zinc-500 dark:text-zinc-400">(or begin with the <a href="/tour/interactive_tour_of_scala_overview.html">overview</a> for a whirlwind feature tour)</span></p>
 
 {% include tour-toc.html %}
 
