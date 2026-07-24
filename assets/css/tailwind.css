@@ -97,6 +97,16 @@
 .laptop-display .scastie .console-label {
   color: #52525b !important;
 }
+/* Same story for console output: Scastie hardcodes white text for its
+   always-dark console; ours is light in light mode. */
+#editor-pane .scastie .console,
+#editor-pane .scastie .console pre,
+#editor-pane .scastie .output-console,
+.laptop-display .scastie .console,
+.laptop-display .scastie .console pre,
+.laptop-display .scastie .output-console {
+  color: #27272a !important;
+}
 @media (prefers-color-scheme: dark) {
   #editor-pane .scastie .switcher-hide,
   #editor-pane .scastie .switcher-show,
@@ -105,6 +115,14 @@
   .laptop-display .scastie .switcher-show,
   .laptop-display .scastie .console-label {
     color: #d4d4d8 !important;
+  }
+  #editor-pane .scastie .console,
+  #editor-pane .scastie .console pre,
+  #editor-pane .scastie .output-console,
+  .laptop-display .scastie .console,
+  .laptop-display .scastie .console pre,
+  .laptop-display .scastie .output-console {
+    color: #e4e4e7 !important;
   }
   #editor-pane .scastie .main-panel,
   #editor-pane .scastie .cm-gutters,
