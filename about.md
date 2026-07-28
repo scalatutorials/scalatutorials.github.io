@@ -5,8 +5,8 @@ permalink: /about.html
 ---
 
 Scala Tutorials is an open-source collection of interactive Scala lessons that run
-entirely in your browser. It was created by [Eran Medan](https://github.com/eranation)
-in 2013 and modernized in 2026; the tour now targets **Scala 3**.
+entirely in your browser. It was created by [Eran Medan](https://www.linkedin.com/in/eranmedan)
+in 2013 and modernized in 2026; the tour now targets **Scala&nbsp;3**.
 
 ### How the code runs
 
@@ -23,3 +23,9 @@ Scastie, so the site's Run button has a fine pedigree.
 Spotted an error or want to add a lesson? The whole site is on
 [GitHub](https://github.com/scalatutorials/scalatutorials.github.io); issues and pull
 requests welcome.
+
+### Other projects
+
+Check out [DepsGuard](https://depsguard.com), a free CLI from [Arnica](https://arnica.io) that guards your
+dependencies (npm, pip, and more) against supply-chain attacks: malicious packages,
+typosquats, and compromised maintainers.
