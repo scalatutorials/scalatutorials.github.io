@@ -14,6 +14,7 @@ code: |
   val arrayConcat = array ++ Array(3, 4, 5)
   val listConcat = list ++ List(4, 5, 6)
   val mapConcat = map ++ Map("four" -> 4, "five" -> 5, "six" -> 6)
+  val setConcat = set ++ Set(3, 4, 5)
 
   //Legacy ::: operator in Lists only
   val listConcat2 = list ::: List(4, 5, 6)
@@ -22,6 +23,7 @@ code: |
   println(listConcat.mkString(","))
   println(listConcat2.mkString(","))
   println(mapConcat.mkString(","))
+  println(setConcat.mkString(","))
 ---
 
 - Arrays, Lists, Maps and Sets can be concatenated using the `++` method

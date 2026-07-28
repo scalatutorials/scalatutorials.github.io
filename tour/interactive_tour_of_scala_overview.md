@@ -30,27 +30,29 @@ code: |
 
   //convenient number ops
   number = number.abs
+  number
 
   //easy ranges
-  val range = 1 until 100 by 2
+  1 until 100 by 2
 
   //easy tuples
-  val tuple = ("Tuples are", 1, true, "awesome thing")
+  ("Tuples are", 1, true, "awesome thing")
 
   //convenient collection ops
-  val tsil = list.reverse
+  list.reverse
 
   //easy iterations
   for ((k, v) <- map) println((k, v))
 
   //easy nested loops. Everything is an expression
-  val result = for (i <- 0 to 10; j <- 0 to i) yield (i, j)
+  for (i <- 0 to 10; j <- 0 to i) yield (i, j)
 
   //lambda functions / function literals
   val functionLiteral = (n: Int) => math.sqrt(n) * n
+  functionLiteral(9)
 
   //String literals
-  val longString = """
+  """
   put " anything  you like in here except three consecutive " :)
   """
 
@@ -84,7 +86,7 @@ code: |
   }
 
   //everything is an expression #2
-  val condition = if person.name == "Alice" then "Hi Alice!" else "Superman?"
+  if person.name == "Alice" then "Hi Alice!" else "Superman?"
 
   //extension methods ("pimp my library")
   extension (i: Int)

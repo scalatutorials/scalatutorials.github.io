@@ -11,10 +11,10 @@ links:
 code: |
   import scala.collection.mutable
 
-  val arrayBuffer = mutable.ArrayBuffer(1, 2, 3)
-  val listBuffer = mutable.ListBuffer("a", "b", "c")
-  val hashSet = mutable.Set(0.1, 0.2, 0.3)
-  val hashMap = mutable.Map("one" -> 1, "two" -> 2)
+  mutable.ArrayBuffer(1, 2, 3)
+  mutable.ListBuffer("a", "b", "c")
+  mutable.Set(0.1, 0.2, 0.3)
+  mutable.Map("one" -> 1, "two" -> 2)
 ---
 
 Scala "encourages" using immutable collections (hence they are the ones used by default), however sometimes mutable collections might have some benefits, either for CPU / memory performance, for code readability or simply a matter of preference. As we saw earlier, Scala provides concrete mutable collections in `scala.collection.mutable`.
