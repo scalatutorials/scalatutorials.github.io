@@ -16,3 +16,32 @@ Your progress is saved in your browser; pages you've visited get a checkmark.
 {% include tour-toc.html %}
 
 <script defer src="/assets/js/tour.js?v={{ site.time | date: '%s' }}"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.tagline | jsonify }},
+  "provider": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "sameAs": "{{ site.production_url }}/"
+  },
+  "url": "{{ site.production_url }}{{ page.url }}",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online"
+  },
+  "hasPart": [
+    {% for p in site.data.tour %}
+    {
+      "@type": "LearningResource",
+      "position": {{ forloop.index }},
+      "name": {{ p.title | jsonify }},
+      "url": "{{ site.production_url }}/tour/{{ p.file }}.html"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
