@@ -8,7 +8,17 @@ author:
 production_url: https://scalatutorials.com
 
 # Keep the historical post URL scheme so 2013 permalinks stay valid.
-permalink: /:categories/:year/:month/:day/:title
+# Scoped to posts only (via defaults) rather than set as a top-level `permalink:`,
+# because a top-level value also changes Jekyll's default suffixing for plain
+# Pages, silently dropping the .html extension from page.url on any page
+# without its own explicit permalink (tour pages, blog.md, etc.) — which is
+# exactly what sitemap.txt uses to build URLs.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /:categories/:year/:month/:day/:title
 
 markdown: kramdown
 highlighter: rouge
