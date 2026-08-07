@@ -7,6 +7,8 @@ author:
 # Used by sitemap.txt to build absolute URLs.
 production_url: https://scalatutorials.com
 
+google_analytics: G-TN8R29NK29
+
 # Keep the historical post URL scheme so 2013 permalinks stay valid.
 # Scoped to posts only (via defaults) rather than set as a top-level `permalink:`,
 # because a top-level value also changes Jekyll's default suffixing for plain
